@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /privacy-policy.html
+Disallow: /cookie-policy.html
+Disallow: /terms.html
+
+Sitemap: https://jrlabs.co.uk/sitemap.xml
