@@ -116,26 +116,27 @@
     banner.setAttribute('aria-labelledby', 'cookieConsentTitle');
 
     banner.innerHTML =
-      '<div class="cookie-consent__inner">' +
-        '<div class="cookie-consent__copy">' +
-          '<p class="cookie-consent__eyebrow">Privacy &amp; analytics</p>' +
-          '<h2 id="cookieConsentTitle">Help us understand how the JR Labs website is used.</h2>' +
-          '<p>We use optional Google Analytics cookies to understand visits and improve the website. ' +
-          'Analytics stays off unless you choose <strong>Accept analytics</strong>. ' +
-          'We do not use advertising cookies.</p>' +
-          '<a href="cookie-policy.html">Read our Cookie Policy</a>' +
-        '</div>' +
+      '<div class="cookie-consent__backdrop" aria-hidden="true"></div>' +
+      '<div class="cookie-consent__card">' +
+        '<p class="cookie-consent__eyebrow">Privacy &amp; analytics</p>' +
+        '<h2 id="cookieConsentTitle">Help us understand how the JR Labs website is used.</h2>' +
+        '<p class="cookie-consent__text">We use optional Google Analytics cookies to understand visits and improve the website. ' +
+        'Analytics stays off unless you choose <strong>Accept analytics</strong>. ' +
+        'We do not use advertising cookies.</p>' +
         '<div class="cookie-consent__actions">' +
           '<button type="button" class="btn btn--gold cookie-consent__accept">Accept analytics</button>' +
           '<button type="button" class="btn btn--ghost cookie-consent__reject">Reject non-essential</button>' +
         '</div>' +
+        '<a class="cookie-consent__policy" href="cookie-policy.html">Read our Cookie Policy</a>' +
       '</div>';
 
     document.body.appendChild(banner);
 
     banner.querySelector('.cookie-consent__accept').addEventListener('click', acceptAnalytics);
     banner.querySelector('.cookie-consent__reject').addEventListener('click', rejectAnalytics);
-    banner.querySelector('.cookie-consent__accept').focus();
+    var card = banner.querySelector('.cookie-consent__card');
+    card.setAttribute('tabindex', '-1');
+    card.focus();
   }
 
   function addSettingsControl() {
