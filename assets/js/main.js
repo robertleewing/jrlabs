@@ -88,24 +88,19 @@
   }
 
   /* ---- 4. Contact form ---------------------------------------------------- */
-  /* NOTE: There is no submission backend in Website V1. The form validates in
-     the browser and then tells the user plainly that submission is not yet
-     connected. See README.md → "Connecting the contact form". */
-  var form = document.getElementById('contactForm');
-  if (form) {
-    var status = document.getElementById('formStatus');
-    form.addEventListener('submit', function (e) {
+/* Netlify handles successful submissions. JavaScript is used only for
+   client-side validation; valid forms are allowed to submit normally. */
+var form = document.getElementById('contactForm');
+
+if (form) {
+  form.addEventListener('submit', function (e) {
+    if (!form.checkValidity()) {
       e.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
-      if (status) {
-        status.classList.add('is-shown');
-        status.textContent =
-          'This form is not yet connected to a submission service, so your message has not been sent. ' +
-          'Please contact JR Labs directly using the details listed on this page while the enquiry service is being configured.';
-        status.focus();
-      }
-    });
-  }
+      form.reportValidity();
+    }
+  });
+}
+
 
   /* ---- 5. Footer year ----------------------------------------------------- */
   Array.prototype.forEach.call(document.querySelectorAll('[data-year]'), function (el) {
