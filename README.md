@@ -10,23 +10,25 @@ folder.
 
 ## 1. File structure
 
-    jr-labs-website-v1/
+    repository root/
     ├── index.html                     Home
     ├── our-story.html                 Our Story
     ├── our-standard.html              Our Standard (JQLS)
     ├── creatine.html                  Creatine (pre-launch product page)
     ├── science-transparency.html      Science & Transparency
     ├── contact.html                   Contact
-    ├── privacy-policy.html            Legal placeholder
-    ├── cookie-policy.html             Legal placeholder
+    ├── privacy-policy.html            Pre-launch privacy information
+    ├── cookie-policy.html             Analytics/cookie information
     ├── terms.html                     Legal placeholder
     ├── 404.html                       Not-found page
+    ├── CNAME                          GitHub Pages custom domain
     ├── robots.txt
     ├── sitemap.xml
     ├── README.md                      This file
     └── assets/
         ├── css/styles.css             Complete design system (single file)
-        ├── js/main.js                 Progressive enhancement only
+        ├── js/main.js                 Progressive enhancement
+        ├── js/consent.js              GA4 consent + analytics loading
         └── img/
             ├── logo-placeholder.svg   TEMPORARY brand mark — see section 4
             ├── favicon.svg
