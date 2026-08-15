@@ -186,3 +186,17 @@ This package includes the approved final visual-refinement pass:
 ## V1.2.2 Product Concept Visual
 
 The original line-art product concept has been replaced with a photorealistic JR Labs creatine tub development render. The website continues to label it clearly as a concept and states that approved product photography will replace it.
+
+## Google Analytics 4 and cookie consent
+
+This build includes a privacy-first GA4 implementation using measurement ID `G-3C5567SET1`.
+
+- Analytics is disabled by default.
+- `assets/js/consent.js` displays the cookie banner and stores the visitor's choice locally.
+- The Google Analytics script is loaded only after the visitor chooses **Accept analytics**.
+- Advertising storage, advertising user data and advertising personalisation remain denied.
+- Visitors can reopen the banner using **Cookie settings** in the footer.
+- The Cookie Policy and Privacy Policy pages have been updated to describe the current pre-launch implementation.
+
+After deploying to GitHub Pages, visit the live site, accept analytics, then use Google Analytics **Test installation** / **Realtime** to confirm data is being received.
+
