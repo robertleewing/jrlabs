@@ -106,7 +106,13 @@
 
         <p class="form-status" id="formStatus" tabindex="-1" role="status" aria-live="polite"></p>
 
-        <form class="form mt-2" id="contactForm" method="post" action="#" novalidate>
+        <form class="form mt-2" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact-success.html" novalidate>
+          <input type="hidden" name="form-name" value="contact">
+          <p class="sr-only" aria-hidden="true">
+            <label>Don’t fill this out if you’re human:
+              <input name="bot-field" type="text" tabindex="-1" autocomplete="off">
+            </label>
+          </p>
           <div class="field">
             <label for="name">Name <span aria-hidden="true">*</span></label>
             <input type="text" id="name" name="name" autocomplete="name" required aria-required="true">
@@ -151,7 +157,7 @@
           </div>
         </form>
 
-        <p class="note mt-3">This pre-launch form will route enquiries to <a href="mailto:contact@jrlabs.co.uk">contact@jrlabs.co.uk</a> once the site submission service is connected. Until then, please email us directly.</p>
+        <p class="note mt-3">Enquiries submitted through this form are securely captured by JR Labs. We’ll use the information you provide only to respond to your enquiry.</p>
       </div>
 
     </div>
